@@ -1,0 +1,78 @@
+<!--
+WebGL Water
+http://madebyevan.com/webgl-water/
+
+Copyright 2011 Evan Wallace
+Released under the MIT license
+-->
+
+<!DOCTYPE html>
+<html><head>
+  <title>WebGL Water</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <script src="OES_texture_float_linear-polyfill.js"></script>
+  <script src="lightgl.js"></script>
+  <script src="cubemap.js"></script>
+  <script src="renderer.js"></script>
+  <script src="water.js"></script>
+  <script src="main.js"></script>
+  <style type="text/css">
+    body { font: 13px/140% Arial, sans-serif; background: #74def0cc; color: black; overflow: hidden; }
+    a { color: inherit; cursor: pointer; }
+    img { display: none; }
+    ul { padding: 0 0 0 20px; }
+    h1 { font: bold  30px/30px Arial; text-align: center; }
+    h2 { font: bold  17px/17px Arial; padding-top: 10px; }
+    h3 { font: 17px/17px Arial; padding-top: 8px; text-align: center;}
+    small { display: block; font-size: 11px; line-height: 15px; }
+    canvas { position: absolute; top: 0; left: 0; color: "blue";}
+    #help { position: absolute; top: 0; right: 0; bottom: 0; width: 280px; padding-right: 20px; overflow: auto; }
+    #loading { position: absolute; left: 0; top: 50%; right: 300px; text-align: center; margin-top: -8px; }
+    @media (max-width: 600px) {
+      small { font-size: 8px; line-height: 10px; }
+      #help { width: 100px; font-size: 10px; line-height: 12px; }
+    }
+  </style>
+</head><body>
+  <div id="loading">Loading...</div>
+  <div id="help">
+    <h1>Team Water</h1>
+    <h3>By: Aemile Donoghue, Paul Githens, Noelle Rosa, Maria Beatriz Zanardo</h3>
+    <h2>Instructions:</h2>
+    <ul>
+      <li>Draw on the water to make ripples</li>
+      <li>Drag the background to rotate the camera</li>
+      <li>Press SPACEBAR to pause and unpause</li>
+      <li>Drag the object to move it around</li>
+      <!-- <li>Press the L key to set the light direction</li> -->
+      <li>Press the G key to toggle gravity</li>
+    </ul>
+    <!-- RADIO BUTTONS FOR WATER PROPERTIES -->
+    <div>
+      <form>
+        <input type="radio" name="changeLiquid" id="water"  value ="water" checked>Water
+        <input type="radio" name="changeLiquid" id="honey" value = "honey">Honey
+        <input type="radio" name="changeLiquid" id="jello" value = "jello">Jello
+         <br><br>
+         <input type="radio" name="shapeType" id="sphere" value="sphere" checked>Sphere
+         <input type="radio" name="shapeType" id="cube" value="cube">Cube
+         <input type="radio" name="shapeType" id="plane" value="plane">Plane
+         <input type="radio" name="shapeType" id="diamond" value="diamond">Diamond
+      </form>
+    </div>
+  </div>
+  <img id="tiles" src="tiles.jpg">
+  <img id="xneg" src="xneg.jpg">
+  <img id="xpos" src="xpos.jpg">
+  <img id="ypos" src="ypos.jpg">
+  <img id="zneg" src="zneg.jpg">
+  <img id="zpos" src="zpos.jpg">
+</body></html>
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-17521220-1', 'auto');
+ga('send', 'pageview');
+</script>
